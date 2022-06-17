@@ -18,3 +18,6 @@ in terms of speed. Working on a fix!
 - [x] Create a table that compares the results
 - [ ] Fix the response time calcuating logic. All response times calculated with the current logic are showing up a bit slower than they actually are.
 - [ ] For some reason there are multiple requests going through instead of just one. Figure out why.
+- [ ] Add support for other networks.
+- [ ] Add support for other endpoints.
+- [ ] Run the test from different locations around the world and present an aggregate.
