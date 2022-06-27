@@ -25,24 +25,24 @@ export const hitEndpointWithResponseTime = async (
   provider: ethers.providers.Provider,
   endpoint: string
 ): Promise<EndpointWithTimeResponse> => {
-  const start = Date.now();
+  const start = window.performance.now();
   // @ts-expect-error
   const blockNumber = await provider[endpoint]!();
-  const end = Date.now();
+  const end = window.performance.now();
   return {
     blockNumber,
-    responseTime: end - start,
+    responseTime: Math.round(end - start),
   };
 };
 
 export const getBlockNumberWithResponseTime = async (
   provider: ethers.providers.Provider
 ) => {
-  const start = Date.now();
+  const start = window.performance.now();
   const blockNumber = await provider.getBlockNumber();
-  const end = Date.now();
+  const end = window.performance.now();
   return {
     blockNumber,
-    responseTime: end - start,
+    responseTime: Math.round(end - start),
   };
 };
